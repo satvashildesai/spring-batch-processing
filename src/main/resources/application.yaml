@@ -1,5 +1,33 @@
+server:
+  port: 9092
+
 spring:
   application:
     name: batch
-server:
-  port: 9092
+
+# Datasource configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/batch
+    username: postgres
+    password: Admin@123
+    driver-class-name: org.postgresql.Driver
+
+# Jpa configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+# Enable schema
+  sql:
+    init:
+      mode: always
+      platform: postgres
+
+# Batch related configuration
+  batch:
+    jdbc:
+      initialize-schema: always
+
+# Source file name
+sourceFile: products_10L.csv
