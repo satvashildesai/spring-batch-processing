@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: batch
+server:
+  port: 9092
